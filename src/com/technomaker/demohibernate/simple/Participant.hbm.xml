@@ -2,5 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-
+    <class name="com.technomaker.demohibernate.simple.Participant" table="PARTICIPANTS">
+        <id name="id" column="PARTICIPANT_ID">
+            <generator class="increment"></generator>
+        </id>
+        <property name="nom" column="NOM" />
+        <property name="prenom" column="PRENOM" />
+        <many-to-one name="formation" column="FORMATION_ID" cascade="all"  class="com.technomaker.demohibernate.simple.Formation"/>
+    </class>
 </hibernate-mapping>
